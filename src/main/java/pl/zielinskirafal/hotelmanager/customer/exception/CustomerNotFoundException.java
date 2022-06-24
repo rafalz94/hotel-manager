@@ -1,7 +1,7 @@
-package pl.zielinskirafal.hotelmanager.guest.exception;
+package pl.zielinskirafal.hotelmanager.customer.exception;
 
-public class customerNotFoundException extends RuntimeException {
-    public customerNotFoundException(String message) {
+public class CustomerNotFoundException extends IllegalArgumentException {
+    public CustomerNotFoundException(String message) {
         super(message);
     }
 }

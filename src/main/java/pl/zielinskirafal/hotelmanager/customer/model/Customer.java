@@ -1,8 +1,9 @@
-package pl.zielinskirafal.hotelmanager.guest.model;
+package pl.zielinskirafal.hotelmanager.customer.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import pl.zielinskirafal.hotelmanager.reservation.model.Reservation;
 
 import javax.persistence.*;
@@ -20,8 +21,6 @@ public class Customer implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
-    private String login;
-    private String password;
     private String email;
     private String phoneNumber;
 

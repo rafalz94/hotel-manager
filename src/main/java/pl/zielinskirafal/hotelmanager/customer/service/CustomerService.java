@@ -1,10 +1,10 @@
-package pl.zielinskirafal.hotelmanager.guest.service;
+package pl.zielinskirafal.hotelmanager.customer.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.zielinskirafal.hotelmanager.guest.exception.customerNotFoundException;
-import pl.zielinskirafal.hotelmanager.guest.model.Customer;
-import pl.zielinskirafal.hotelmanager.guest.repository.CustomerRepository;
+import pl.zielinskirafal.hotelmanager.customer.exception.CustomerNotFoundException;
+import pl.zielinskirafal.hotelmanager.customer.model.Customer;
+import pl.zielinskirafal.hotelmanager.customer.repository.CustomerRepository;
 
 import java.util.List;
 
@@ -17,23 +17,23 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
+    }
+
     public Customer addCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
 
-    public List<Customer> findAllCustomers() {
-        return customerRepository.findAll();
-    }
-
     public Customer updateCustomer(Customer customer){
-        return customerRepository.
+        return customerRepository.save(customer);
     }
 
     public void deleteCustomer(Long id) {
-        customerRepository.deleteCustomerById(id);
+        customerRepository.deleteById(id);
     }
 
     public List<Customer> findCustomer(String lastName) {
-        return customerRepository.findCustomerByLastName(lastName).orElseThrow(() -> new customerNotFoundException("Customer by last name: " + lastName + " not found"));
+        return customerRepository.findCustomerByLastName(lastName).orElseThrow(() -> new CustomerNotFoundException("Customer by last name: " + lastName + " not found"));
     }
 }

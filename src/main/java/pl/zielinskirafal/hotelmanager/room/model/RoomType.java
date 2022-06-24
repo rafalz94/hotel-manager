@@ -1,5 +1,5 @@
-package pl.zielinskirafal.hotelmanager.model;
+package pl.zielinskirafal.hotelmanager.room.model;
 
 public enum RoomType {
-    Economy, Balcony, Business, Luxury
+    Standard, Premium
 }

@@ -1,13 +1,14 @@
-package pl.zielinskirafal.hotelmanager.guest.repository;
+package pl.zielinskirafal.hotelmanager.customer.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.zielinskirafal.hotelmanager.guest.model.Customer;
+import org.springframework.stereotype.Repository;
+import pl.zielinskirafal.hotelmanager.customer.model.Customer;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public interface CustomerRepository extends JpaRepository<Customer,Long> {
-    void deleteCustomerById(Long id);
 
     Optional<List<Customer>> findCustomerByLastName(String lastName);
 
